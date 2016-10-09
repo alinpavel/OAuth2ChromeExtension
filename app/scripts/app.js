@@ -1,9 +1,3 @@
-/**
- * Created with IntelliJ IDEA.
- * User: mfo
- * Date: 8/6/14
- * Time: 7:26 PM
- */
 var myApp = angular.module('myApp', ['LocalStorageModule', 'ngRoute']);
 
 myApp.config(function ($routeProvider) {

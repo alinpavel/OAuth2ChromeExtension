@@ -8,6 +8,7 @@ myApp.controller('PublicCtrl', function ($scope, $http, Data, $q, $timeout, $log
     $log.debug(controller, 'received event:', event, args);
     $timeout(function () { // do this to make sure updates are noticed
       $scope.userName = Auth.getUserName();
+      $log.debug('Username is' + Auth.getUserName());
     }, 0);
   });
 

@@ -126,7 +126,8 @@ myApp.factory('Auth', function ($window, $timeout, $http, $log, Chrome, Broadcas
 
   function getUserName() {
     if (userInfo) {
-      return userInfo[config.userInfoNameField];
+      return userInfo.emailAddress;
+      $log.debug('cocococococo' + userInfo.emailAddress);
     }
     return null;
   }
