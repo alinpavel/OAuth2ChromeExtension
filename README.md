@@ -1,6 +1,11 @@
 # oauth2-chrome-extension-demo
 A simple demo of integrating OAuth2 with or without Google in an AngularJS Chrome Extension
 
+## Set the Redirect URL in console.developer.com as : 
+https://<extension_id>.chromiumapp.org/oauth2
+
+after that, change the clientId and you should be ready to rumble.
+
 ## What it does
 
 This is basically a skeleton extension showing how you can integrate OAuth2 into a Google Chrome Extension written in AngularJS.

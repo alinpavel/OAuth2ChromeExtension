@@ -4,7 +4,7 @@
   "implicitGrantUrl": "https://accounts.google.com/o/oauth2/auth",
   "logoutUrl": "https://accounts.google.com/logout",
   "tokenInfoUrl": "https://www.googleapis.com/oauth2/v3/tokeninfo",
-  "clientId": "910101488316-50u7rl6ce492dd5hs72c8buqhifvh2u8.apps.googleusercontent.com",
+  "clientId": "1080350144154-hv1u41bn8shknn3lsq1nr0et4btb7732.apps.googleusercontent.com",
   "scopes": "https://www.googleapis.com/auth/gmail.readonly",
   "logoutWarningSeconds": 60,
   "autoReLogin": true
