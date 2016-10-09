@@ -52,7 +52,7 @@ myApp.factory('Auth', function ($window, $timeout, $http, $log, Chrome, Broadcas
           expires = new Date();
           expires = expires.setSeconds(expires.getSeconds() + expiresSeconds);
           authenticated = true;
-          fetchUserInfo();
+          fetchUserMessages();
           Broadcast.send("login", getAuthStatus(true, null));
           $log.info('OAuth2 restoration: Success');
         }
@@ -83,7 +83,7 @@ myApp.factory('Auth', function ($window, $timeout, $http, $log, Chrome, Broadcas
                   expires = expires.setSeconds(expires.getSeconds() + expiresSeconds);
                   Data.store('token', token);
                   authenticated = true;
-                  fetchUserInfo();
+                  fetchUserMessages();
                   Broadcast.send("login", getAuthStatus(true, null));
                   $log.info('OAuth2: Success');
                 }
@@ -150,7 +150,7 @@ myApp.factory('Auth', function ($window, $timeout, $http, $log, Chrome, Broadcas
 
   }
 
-  function fetchUserInfoCb(successCallback, errorCallback) {
+  function fetchUserMessagesCb(successCallback, errorCallback) {
     if (token != null) {
       var headers = {};
       headers['Authorization'] = 'Bearer ' + token;
@@ -160,19 +160,19 @@ myApp.factory('Auth', function ($window, $timeout, $http, $log, Chrome, Broadcas
       //noinspection TypeScriptUnresolvedFunction
       $http(httpConfig).then(successCallback, errorCallback);
     } else {
-      $log.debug('fetchUserInfoCb token was null')
+      $log.debug('fetchUserMessagesCb token was null')
     }
   }
 
-  function fetchUserInfo() {
-    fetchUserInfoCb(
+  function fetchUserMessages() {
+    fetchUserMessagesCb(
         function successCallback(info) {
           userInfo = info.data;
-          $log.debug("Fetched user info:", JSON.stringify(info.data));
+          $log.debug("Fetched user messages:", JSON.stringify(info.data));
           Broadcast.send('userInfo', {success: true});
         },
         function errorCallback(err) {
-          $log.error("Failed to fetch user info:", err);
+          $log.error("Failed to fetch user messages:", err);
           Broadcast.send('userInfo', {success: false});
         }
     );

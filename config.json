@@ -1,5 +1,5 @@
 {
-  "userInfoUrl": "https://www.googleapis.com/plus/v1/people/me",
+  "userInfoUrl": "https://www.googleapis.com/gmail/v1/users/alinalin91@gmail.com/profile",
   "userInfoNameField": "displayName",
   "implicitGrantUrl": "https://accounts.google.com/o/oauth2/auth",
   "logoutUrl": "https://accounts.google.com/logout",
